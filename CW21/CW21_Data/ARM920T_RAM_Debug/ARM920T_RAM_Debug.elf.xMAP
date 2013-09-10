@@ -177,46 +177,46 @@
      4] @EX@Uart_Get_Pressed (object,local) found in Uart.c 
      4] @EX@Uart_Check_Overrun_Error (object,local) found in Uart.c 
      4] @EX@Uart_Init (object,local) found in Uart.c 
-     4] Timer_Start (func,global) found in Timer.c 
-     4] @EX@Timer_Init (object,local) found in Timer.c 
-     4] @EX@Timer_Start (object,local) found in Timer.c 
-     4] Lcd_Printf (func,global) found in Lcd.c 
-      5] Fbuf (object,global) found in Lcd.c 
-      5] DEMO256pal (object,local) found in Lcd.c 
-      5] .bss (section,local) found in Lcd.c 
-     4] @EX@Lcd_Select_Frame_Buffer (object,local) found in Lcd.c 
-     4] @EX@Lcd_Set_Address (object,local) found in Lcd.c 
-     4] @EX@NonPal_Put_Pixel (object,local) found in Lcd.c 
-     4] @EX@Palette_Init (object,local) found in Lcd.c 
-     4] @EX@Lcd_Puts (object,local) found in Lcd.c 
-     4] @EX@Lcd_Han_Putch (object,local) found in Lcd.c 
-     4] @EX@Lcd_Eng_Putch (object,local) found in Lcd.c 
-     4] @EX@NonPal_Lcd_Init (object,local) found in Lcd.c 
-     4] @EX@Lcd_Init (object,local) found in Lcd.c 
-     4] @EX@Lcd_Port_Init (object,local) found in Lcd.c 
-     4] @EX@Lcd_Draw_BMP (object,local) found in Lcd.c 
-     4] @EX@Put_Pixel (object,local) found in Lcd.c 
-     4] @EX@Lcd_Printf (object,local) found in Lcd.c 
-      5] @ET@Lcd_Printf (object,local) found in Lcd.c 
-     4] @EX@Lcd_Get_Info_BMP (object,local) found in Lcd.c 
      4] hardware_init (func,global) found in common.c 
+      5] NonPal_Put_Pixel (func,global) found in Lcd.c 
+       6] Fbuf (object,global) found in Lcd.c 
+       6] DEMO256pal (object,local) found in Lcd.c 
+       6] .bss (section,local) found in Lcd.c 
+      5] @EX@Lcd_Select_Frame_Buffer (object,local) found in Lcd.c 
+      5] @EX@Lcd_Set_Address (object,local) found in Lcd.c 
+      5] @EX@NonPal_Put_Pixel (object,local) found in Lcd.c 
+      5] @EX@Palette_Init (object,local) found in Lcd.c 
+      5] @EX@Lcd_Puts (object,local) found in Lcd.c 
+      5] @EX@Lcd_Han_Putch (object,local) found in Lcd.c 
+      5] @EX@Lcd_Eng_Putch (object,local) found in Lcd.c 
+      5] @EX@NonPal_Lcd_Init (object,local) found in Lcd.c 
+      5] @EX@Lcd_Init (object,local) found in Lcd.c 
+      5] @EX@Lcd_Port_Init (object,local) found in Lcd.c 
+      5] @EX@Lcd_Draw_BMP (object,local) found in Lcd.c 
+      5] @EX@Put_Pixel (object,local) found in Lcd.c 
+      5] @EX@Lcd_Printf (object,local) found in Lcd.c 
+       6] @ET@Lcd_Printf (object,local) found in Lcd.c 
+      5] @EX@Lcd_Get_Info_BMP (object,local) found in Lcd.c 
      4] @EX@clear_screen (object,local) found in common.c 
      4] @EX@hardware_init (object,local) found in common.c 
-     4] @141 (object,local) found in stop-watch.c 
+     4] Timer_Init (func,global) found in Timer.c 
+     4] @EX@Timer_Init (object,local) found in Timer.c 
+     4] @EX@Timer_Start (object,local) found in Timer.c 
+     4] @135 (object,local) found in stop-watch.c 
       5] Inval_ISR (func,global) found in stop-watch.c 
       5] @EX@Inval_ISR (object,local) found in stop-watch.c 
       5] @EX@Timer0_ISR (object,local) found in stop-watch.c 
       5] @EX@C_IRQHandler (object,local) found in stop-watch.c 
       5] @EX@Task (object,local) found in stop-watch.c 
-      5] @EX@TaskStart (object,local) found in stop-watch.c 
       5] @EX@Main (object,local) found in stop-watch.c 
+      5] @EX@TaskStart (object,local) found in stop-watch.c 
      4] TaskStartStk (object,global) found in stop-watch.c 
     3] @EX@Inval_ISR (object,local) found in stop-watch.c 
     3] @EX@Timer0_ISR (object,local) found in stop-watch.c 
     3] @EX@C_IRQHandler (object,local) found in stop-watch.c 
     3] @EX@Task (object,local) found in stop-watch.c 
-    3] @EX@TaskStart (object,local) found in stop-watch.c 
     3] @EX@Main (object,local) found in stop-watch.c 
+    3] @EX@TaskStart (object,local) found in stop-watch.c 
 
 # Unreferenced symbols:
 
@@ -403,16 +403,16 @@
   30003644 00000018 .text   Inval_ISR	(stop-watch.c)
   30003644 00000000 .text   .text	(stop-watch.c)
   30003644 00000000 .text   $a	(stop-watch.c)
-  3000365C 00000000 .text   $a	(stop-watch.c)
   3000365C 0000002C .text   C_IRQHandler	(stop-watch.c)
+  3000365C 00000000 .text   $a	(stop-watch.c)
   30003688 00000000 .text   $a	(stop-watch.c)
-  30003688 00000004 .text   Task	(stop-watch.c)
-  3000368C 000001AC .text   TaskStart	(stop-watch.c)
-  3000368C 00000000 .text   $a	(stop-watch.c)
-  30003838 00000034 .text   Timer0_ISR	(stop-watch.c)
-  30003838 00000000 .text   $a	(stop-watch.c)
-  3000386C 000000B0 .text   Main	(stop-watch.c)
-  3000386C 00000000 .text   $a	(stop-watch.c)
+  30003688 00000034 .text   Timer0_ISR	(stop-watch.c)
+  300036BC 00000004 .text   Task	(stop-watch.c)
+  300036BC 00000000 .text   $a	(stop-watch.c)
+  300036C0 0000006C .text   Main	(stop-watch.c)
+  300036C0 00000000 .text   $a	(stop-watch.c)
+  3000372C 000001F0 .text   TaskStart	(stop-watch.c)
+  3000372C 00000000 .text   $a	(stop-watch.c)
   300038D8 00000000 .text   $d	(stop-watch.c)
   3000391C 00000000 .text   $a	(common.c)
   3000391C 0000005C .text   clear_screen	(common.c)
@@ -652,121 +652,120 @@
   300230F5 0000001E .data   _last	(Lcd.c)
   30023114 00000000 .data   .data	(stop-watch.c)
   30023114 00000080 .data   irqtbl	(stop-watch.c)
-  30023194 0005FA36 .data   bicycle	(stop-watch.c)
-  30082BCA 00000031 .data   @114	(stop-watch.c)
-  30082BFB 00000024 .data   @115	(stop-watch.c)
-  30082C1F 00000017 .data   @133	(stop-watch.c)
-  30082C36 0000000D .data   @134	(stop-watch.c)
-  30082C43 0000000C .data   @135	(stop-watch.c)
-  30082C4F 0000000D .data   @136	(stop-watch.c)
-  30082C5C 00000005 .data   @137	(stop-watch.c)
-  30082C61 00000012 .data   @141	(stop-watch.c)
-  30082C74 00000004 .data   __float_huge	(MSL_C_ARM_LE.a float.o        )
-  30082C78 00000004 .data   __float_max	(MSL_C_ARM_LE.a float.o        )
-  30082C7C 00000004 .data   __float_min	(MSL_C_ARM_LE.a float.o        )
-  30082C80 00000004 .data   __float_nan	(MSL_C_ARM_LE.a float.o        )
-  30082C84 00000004 .data   __float_epsilon	(MSL_C_ARM_LE.a float.o        )
-  30082C88 00000008 .data   __extended_epsilon	(MSL_C_ARM_LE.a float.o        )
-  30082C90 00000008 .data   __double_tiny	(MSL_C_ARM_LE.a float.o        )
-  30082C98 00000008 .data   __extended_tiny	(MSL_C_ARM_LE.a float.o        )
-  30082CA0 00000008 .data   __double_huge	(MSL_C_ARM_LE.a float.o        )
-  30082CA8 00000008 .data   __double_nan	(MSL_C_ARM_LE.a float.o        )
-  30082CB0 00000008 .data   __double_epsilon	(MSL_C_ARM_LE.a float.o        )
-  30082CB8 00000008 .data   __double_max	(MSL_C_ARM_LE.a float.o        )
-  30082CC0 00000008 .data   __double_min	(MSL_C_ARM_LE.a float.o        )
-  30082CC8 00000008 .data   __extended_huge	(MSL_C_ARM_LE.a float.o        )
-  30082CD0 00000008 .data   __extended_min	(MSL_C_ARM_LE.a float.o        )
-  30082CD8 00000008 .data   __extended_max	(MSL_C_ARM_LE.a float.o        )
-  30082CE0 00000008 .data   __extended_nan	(MSL_C_ARM_LE.a float.o        )
-  30082CE8 00000001 .data   @23	(MSL_C_ARM_LE.a locale.o       )
-  30082CE9 00000003 .data   @20	(MSL_C_ARM_LE.a locale.o       )
-  30082CEC 00000006 .data   @16	(MSL_C_ARM_LE.a locale.o       )
-  30082CF4 00000008 .data   _loc_ctyp_C	(MSL_C_ARM_LE.a locale.o       )
-  30082CFC 00000009 .data   @19	(MSL_C_ARM_LE.a locale.o       )
-  30082D08 0000000C .data   _current_locale	(MSL_C_ARM_LE.a locale.o       )
-  30082D14 0000000C .data   @18	(MSL_C_ARM_LE.a locale.o       )
-  30082D20 0000000F .data   @17	(MSL_C_ARM_LE.a locale.o       )
-  30082D30 00000010 .data   _loc_coll_C	(MSL_C_ARM_LE.a locale.o       )
-  30082D40 00000020 .data   _loc_tim_C	(MSL_C_ARM_LE.a locale.o       )
-  30082D60 00000055 .data   @21	(MSL_C_ARM_LE.a locale.o       )
-  30082DB5 00000086 .data   @22	(MSL_C_ARM_LE.a locale.o       )
-  30082E3C 000000C0 .data   char_coll_tableC	(MSL_C_ARM_LE.a locale.o       )
-  30082EFC 00000002 .data   @1120	(MSL_C_ARM_LE.a printf.o       )
-  30082EFE 00000001 .data   @1121	(MSL_C_ARM_LE.a printf.o       )
-  30082EFF 00000005 .data   @1325	(MSL_C_ARM_LE.a printf.o       )
-  30082F04 00000005 .data   @1326	(MSL_C_ARM_LE.a printf.o       )
-  30082F09 00000004 .data   @1327	(MSL_C_ARM_LE.a printf.o       )
-  30082F0D 00000004 .data   @1328	(MSL_C_ARM_LE.a printf.o       )
-  30082F11 00000005 .data   @1329	(MSL_C_ARM_LE.a printf.o       )
-  30082F16 00000005 .data   @1330	(MSL_C_ARM_LE.a printf.o       )
-  30082F1B 00000004 .data   @1331	(MSL_C_ARM_LE.a printf.o       )
-  30082F1F 00000004 .data   @1332	(MSL_C_ARM_LE.a printf.o       )
-  30082F23 00000006 .data   @1510	(MSL_C_ARM_LE.a printf.o       )
-  30082F29 00000001 .data   _fdlib_version	(MSL_C_ARM_LE.a s_lib_version.o)
-  30082F2A 00000002 .data   @939	(MSL_C_ARM_LE.a ansi_fp.o      )
-  30082F2C 00000002 .data   @940	(MSL_C_ARM_LE.a ansi_fp.o      )
-  30082F2E 00000002 .data   @941	(MSL_C_ARM_LE.a ansi_fp.o      )
-  30082F30 00000005 .exception @ET@Uart_Printf	(Uart.c)
-  30082F30 00000000 .exception .exception	(Uart.c)
-  30082F35 00000005 .exception @ET@Lcd_Printf	(Lcd.c)
-  30082F35 00000000 .exception .exception	(Lcd.c)
-#>30082F3C          __exception_table_start__ (linker command file)
+  30023194 00000017 .data   @127	(stop-watch.c)
+  300231AB 0000000D .data   @128	(stop-watch.c)
+  300231B8 0000000C .data   @129	(stop-watch.c)
+  300231C4 0000000D .data   @130	(stop-watch.c)
+  300231D1 00000005 .data   @131	(stop-watch.c)
+  300231D6 00000012 .data   @135	(stop-watch.c)
+  300231E8 00000031 .data   @145	(stop-watch.c)
+  30023219 00000024 .data   @146	(stop-watch.c)
+  30023240 00000004 .data   __float_huge	(MSL_C_ARM_LE.a float.o        )
+  30023244 00000004 .data   __float_max	(MSL_C_ARM_LE.a float.o        )
+  30023248 00000004 .data   __float_min	(MSL_C_ARM_LE.a float.o        )
+  3002324C 00000004 .data   __float_nan	(MSL_C_ARM_LE.a float.o        )
+  30023250 00000004 .data   __float_epsilon	(MSL_C_ARM_LE.a float.o        )
+  30023254 00000008 .data   __extended_epsilon	(MSL_C_ARM_LE.a float.o        )
+  3002325C 00000008 .data   __double_tiny	(MSL_C_ARM_LE.a float.o        )
+  30023264 00000008 .data   __extended_tiny	(MSL_C_ARM_LE.a float.o        )
+  3002326C 00000008 .data   __double_huge	(MSL_C_ARM_LE.a float.o        )
+  30023274 00000008 .data   __double_nan	(MSL_C_ARM_LE.a float.o        )
+  3002327C 00000008 .data   __double_epsilon	(MSL_C_ARM_LE.a float.o        )
+  30023284 00000008 .data   __double_max	(MSL_C_ARM_LE.a float.o        )
+  3002328C 00000008 .data   __double_min	(MSL_C_ARM_LE.a float.o        )
+  30023294 00000008 .data   __extended_huge	(MSL_C_ARM_LE.a float.o        )
+  3002329C 00000008 .data   __extended_min	(MSL_C_ARM_LE.a float.o        )
+  300232A4 00000008 .data   __extended_max	(MSL_C_ARM_LE.a float.o        )
+  300232AC 00000008 .data   __extended_nan	(MSL_C_ARM_LE.a float.o        )
+  300232B4 00000001 .data   @23	(MSL_C_ARM_LE.a locale.o       )
+  300232B5 00000003 .data   @20	(MSL_C_ARM_LE.a locale.o       )
+  300232B8 00000006 .data   @16	(MSL_C_ARM_LE.a locale.o       )
+  300232C0 00000008 .data   _loc_ctyp_C	(MSL_C_ARM_LE.a locale.o       )
+  300232C8 00000009 .data   @19	(MSL_C_ARM_LE.a locale.o       )
+  300232D4 0000000C .data   _current_locale	(MSL_C_ARM_LE.a locale.o       )
+  300232E0 0000000C .data   @18	(MSL_C_ARM_LE.a locale.o       )
+  300232EC 0000000F .data   @17	(MSL_C_ARM_LE.a locale.o       )
+  300232FC 00000010 .data   _loc_coll_C	(MSL_C_ARM_LE.a locale.o       )
+  3002330C 00000020 .data   _loc_tim_C	(MSL_C_ARM_LE.a locale.o       )
+  3002332C 00000055 .data   @21	(MSL_C_ARM_LE.a locale.o       )
+  30023381 00000086 .data   @22	(MSL_C_ARM_LE.a locale.o       )
+  30023408 000000C0 .data   char_coll_tableC	(MSL_C_ARM_LE.a locale.o       )
+  300234C8 00000002 .data   @1120	(MSL_C_ARM_LE.a printf.o       )
+  300234CA 00000001 .data   @1121	(MSL_C_ARM_LE.a printf.o       )
+  300234CB 00000005 .data   @1325	(MSL_C_ARM_LE.a printf.o       )
+  300234D0 00000005 .data   @1326	(MSL_C_ARM_LE.a printf.o       )
+  300234D5 00000004 .data   @1327	(MSL_C_ARM_LE.a printf.o       )
+  300234D9 00000004 .data   @1328	(MSL_C_ARM_LE.a printf.o       )
+  300234DD 00000005 .data   @1329	(MSL_C_ARM_LE.a printf.o       )
+  300234E2 00000005 .data   @1330	(MSL_C_ARM_LE.a printf.o       )
+  300234E7 00000004 .data   @1331	(MSL_C_ARM_LE.a printf.o       )
+  300234EB 00000004 .data   @1332	(MSL_C_ARM_LE.a printf.o       )
+  300234EF 00000006 .data   @1510	(MSL_C_ARM_LE.a printf.o       )
+  300234F5 00000001 .data   _fdlib_version	(MSL_C_ARM_LE.a s_lib_version.o)
+  300234F6 00000002 .data   @939	(MSL_C_ARM_LE.a ansi_fp.o      )
+  300234F8 00000002 .data   @940	(MSL_C_ARM_LE.a ansi_fp.o      )
+  300234FA 00000002 .data   @941	(MSL_C_ARM_LE.a ansi_fp.o      )
+  300234FC 00000005 .exception @ET@Uart_Printf	(Uart.c)
+  300234FC 00000000 .exception .exception	(Uart.c)
+  30023501 00000005 .exception @ET@Lcd_Printf	(Lcd.c)
+  30023501 00000000 .exception .exception	(Lcd.c)
+#>30023508          __exception_table_start__ (linker command file)
 # Exception index
-  30082F3C 000003F0         Exception Table Index	()
-#>3008332C          __exception_table_end__ (linker command file)
-#>3008332C          __START_BSS (linker command file)
-#>3008332C          Image$$ZI$$Base (linker command file)
-  3008332C 00000004 .bss    OSIntCtxSwFlag	(Os_cpu_c.c)
-  3008332C 00000000 .bss    .bss	(Os_cpu_c.c)
-  30083330 00000001 .bss    OSPrioHighRdy	(uCOS_II.C)
-  30083330 00000000 .bss    .bss	(uCOS_II.C)
-  30083331 00000001 .bss    OSPrioCur	(uCOS_II.C)
-  30083332 00000001 .bss    OSIntNesting	(uCOS_II.C)
-  30083333 00000001 .bss    OSRunning	(uCOS_II.C)
-  30083334 00000001 .bss    OSStatRdy	(uCOS_II.C)
-  30083335 00000001 .bss    OSLockNesting	(uCOS_II.C)
-  30083336 00000001 .bss    OSCPUUsage	(uCOS_II.C)
-  30083337 00000001 .bss    OSIntExitY	(uCOS_II.C)
-  30083338 00000001 .bss    OSRdyGrp	(uCOS_II.C)
-  30083339 00000001 .bss    OSTaskCtr	(uCOS_II.C)
-  3008333C 00000004 .bss    OSTCBList	(uCOS_II.C)
-  30083340 00000004 .bss    OSTime	(uCOS_II.C)
-  30083344 00000004 .bss    OSIdleCtrRun	(uCOS_II.C)
-  30083348 00000004 .bss    OSTCBHighRdy	(uCOS_II.C)
-  3008334C 00000004 .bss    OSTCBCur	(uCOS_II.C)
-  30083350 00000004 .bss    OSIdleCtrMax	(uCOS_II.C)
-  30083354 00000004 .bss    OSIdleCtr	(uCOS_II.C)
-  30083358 00000004 .bss    OSEventFreeList	(uCOS_II.C)
-  3008335C 00000004 .bss    OSCtxSwCtr	(uCOS_II.C)
-  30083360 00000004 .bss    OSTCBFreeList	(uCOS_II.C)
-  30083364 00000008 .bss    OSRdyTbl	(uCOS_II.C)
-  3008336C 00000064 .bss    OSEventTbl	(uCOS_II.C)
-  300833D0 00000100 .bss    OSTCBPrioTbl	(uCOS_II.C)
-  300834D0 00000270 .bss    OSTCBTbl	(uCOS_II.C)
-  30083740 00000800 .bss    OSTaskIdleStk	(uCOS_II.C)
-  30083F40 00000800 .bss    OSTaskStatStk	(uCOS_II.C)
-  30084740 00000002 .bss    bfType	(Lcd.c)
-  30084740 00000000 .bss    .bss	(Lcd.c)
-  30084744 00000004 .bss    bfOffbits	(Lcd.c)
-  30084748 00000004 .bss    biWidth	(Lcd.c)
-  3008474C 00000004 .bss    biWidth2	(Lcd.c)
-  30084750 00000004 .bss    biHeight	(Lcd.c)
-  30084754 00000004 .bss    bfSize	(Lcd.c)
-  30084758 00000000 .bss    .bss	(stop-watch.c)
-  30084758 0000000A .bss    TaskData	(stop-watch.c)
-  30084764 00000800 .bss    TaskStartStk	(stop-watch.c)
-  30084F64 00005000 .bss    TaskStk	(stop-watch.c)
-  30089F64 00000004 .bss    errno	(MSL_C_ARM_LE.a errno.o        )
-  30089F68 00000004 .bss    unused	(MSL_C_ARM_LE.a float.o        )
-  30089F6C 00000004 .bss    signgam	(MSL_C_ARM_LE.a s_signgam.o    )
-#>30089F70          _END_BSS (linker command file)
-#>30089F70          Image$$ZI$$Limit (linker command file)
+  30023508 000003F0         Exception Table Index	()
+#>300238F8          __exception_table_end__ (linker command file)
+#>300238F8          __START_BSS (linker command file)
+#>300238F8          Image$$ZI$$Base (linker command file)
+  300238F8 00000004 .bss    OSIntCtxSwFlag	(Os_cpu_c.c)
+  300238F8 00000000 .bss    .bss	(Os_cpu_c.c)
+  300238FC 00000001 .bss    OSPrioHighRdy	(uCOS_II.C)
+  300238FC 00000000 .bss    .bss	(uCOS_II.C)
+  300238FD 00000001 .bss    OSPrioCur	(uCOS_II.C)
+  300238FE 00000001 .bss    OSIntNesting	(uCOS_II.C)
+  300238FF 00000001 .bss    OSRunning	(uCOS_II.C)
+  30023900 00000001 .bss    OSStatRdy	(uCOS_II.C)
+  30023901 00000001 .bss    OSLockNesting	(uCOS_II.C)
+  30023902 00000001 .bss    OSCPUUsage	(uCOS_II.C)
+  30023903 00000001 .bss    OSIntExitY	(uCOS_II.C)
+  30023904 00000001 .bss    OSRdyGrp	(uCOS_II.C)
+  30023905 00000001 .bss    OSTaskCtr	(uCOS_II.C)
+  30023908 00000004 .bss    OSTCBList	(uCOS_II.C)
+  3002390C 00000004 .bss    OSTime	(uCOS_II.C)
+  30023910 00000004 .bss    OSIdleCtrRun	(uCOS_II.C)
+  30023914 00000004 .bss    OSTCBHighRdy	(uCOS_II.C)
+  30023918 00000004 .bss    OSTCBCur	(uCOS_II.C)
+  3002391C 00000004 .bss    OSIdleCtrMax	(uCOS_II.C)
+  30023920 00000004 .bss    OSIdleCtr	(uCOS_II.C)
+  30023924 00000004 .bss    OSEventFreeList	(uCOS_II.C)
+  30023928 00000004 .bss    OSCtxSwCtr	(uCOS_II.C)
+  3002392C 00000004 .bss    OSTCBFreeList	(uCOS_II.C)
+  30023930 00000008 .bss    OSRdyTbl	(uCOS_II.C)
+  30023938 00000064 .bss    OSEventTbl	(uCOS_II.C)
+  3002399C 00000100 .bss    OSTCBPrioTbl	(uCOS_II.C)
+  30023A9C 00000270 .bss    OSTCBTbl	(uCOS_II.C)
+  30023D0C 00000800 .bss    OSTaskIdleStk	(uCOS_II.C)
+  3002450C 00000800 .bss    OSTaskStatStk	(uCOS_II.C)
+  30024D0C 00000002 .bss    bfType	(Lcd.c)
+  30024D0C 00000000 .bss    .bss	(Lcd.c)
+  30024D10 00000004 .bss    bfOffbits	(Lcd.c)
+  30024D14 00000004 .bss    biWidth	(Lcd.c)
+  30024D18 00000004 .bss    biWidth2	(Lcd.c)
+  30024D1C 00000004 .bss    biHeight	(Lcd.c)
+  30024D20 00000004 .bss    bfSize	(Lcd.c)
+  30024D24 00000000 .bss    .bss	(stop-watch.c)
+  30024D24 0000000A .bss    TaskData	(stop-watch.c)
+  30024D30 00000800 .bss    TaskStartStk	(stop-watch.c)
+  30025530 00005000 .bss    TaskStk	(stop-watch.c)
+  3002A530 00000004 .bss    errno	(MSL_C_ARM_LE.a errno.o        )
+  3002A534 00000004 .bss    unused	(MSL_C_ARM_LE.a float.o        )
+  3002A538 00000004 .bss    signgam	(MSL_C_ARM_LE.a s_signgam.o    )
+#>3002A540          _END_BSS (linker command file)
+#>3002A540          Image$$ZI$$Limit (linker command file)
 
 
 # Memory map:
   v_addr   p_addr   size     name
   30000000 30000000 00007E48 text
-  30007E48 30007E48 00082128 data
+  30007E48 30007E48 000226F8 data
 
-# Link start time: Tue Sep 10 19:33:00 2013
-# Link end time: Tue Sep 10 19:33:00 2013
+# Link start time: Tue Sep 10 19:48:04 2013
+# Link end time: Tue Sep 10 19:48:04 2013
