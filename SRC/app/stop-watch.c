@@ -15,12 +15,7 @@
 #include "includes.h"
 #include "bicycle.h"
 
-#define BLACK	0x0000
-#define WHITE	0xfffe
-#define BLUE	0x003e
-#define GREEN	0x07c0
-#define RED		0xf800
-
+#include "common.h"
 
 /* ********************************************************************* */
 /* Global definitions */
@@ -127,15 +122,15 @@ void TaskStart (void *data)
 
         Uart_Printf("<-POWER OFF TO QUIT->\n");
 
-		Lcd_Printf(5*8,16*16,BLACK,WHITE,1,1,"Task Count: ",OSTaskCtr);  
-		Lcd_Printf(25*8,16*16,BLACK,WHITE,1,1,"CPU Usage: ",OSCPUUsage);  
-		Lcd_Printf(40*8,16*16,BLACK,WHITE,1,1,"Context SW: ",OSCtxSwCtr);  
+		Lcd_Printf(5*8,16*16,WHITE,GREEN,1,1,"Task Count: ",OSTaskCtr);  
+		Lcd_Printf(25*8,16*16,WHITE,GREEN,1,1,"CPU Usage: ",OSCPUUsage);  
+		Lcd_Printf(40*8,16*16,WHITE,GREEN,1,1,"Context SW: ",OSCtxSwCtr);  
 
         while(1)
         {
- 				Lcd_Printf(16*8,16*16,BLACK,WHITE,1,1,"%-3d",OSTaskCtr);  
- 				Lcd_Printf(35*8,16*16,BLACK,WHITE,1,1,"%-3d",OSCPUUsage);  
- 				Lcd_Printf(51*8,16*16,BLACK,WHITE,1,1,"%-3d",OSCtxSwCtr);  
+ 				Lcd_Printf(16*8,16*16,WHITE,GREEN,1,1,"%-3d",OSTaskCtr);  
+ 				Lcd_Printf(35*8,16*16,WHITE,GREEN,1,1,"%-3d",OSCPUUsage);  
+ 				Lcd_Printf(51*8,16*16,WHITE,GREEN,1,1,"%-3d",OSCtxSwCtr);  
 							
                 OSCtxSwCtr = 0;
                 
@@ -154,20 +149,11 @@ void TaskStart (void *data)
 
 void Main()
 {
-	int i,j;
-
-	Uart_Init(115200);	
-	Lcd_Port_Init();
-	NonPal_Lcd_Init();
-
-	for(j=0; j<272; j++)
-	{
-		for(i=0; i<480; i++)
-			NonPal_Put_Pixel(i,j,WHITE);
-	}
+	hardware_init();
+	clear_screen(GREEN);
 
 	Uart_Send_String("Stop Watch in uC/OS-II. Designed by Hyunwoo Lee\n");
-	Lcd_Printf(10*8,0,WHITE,BLUE,1,1,"Stop Watch. Designed by Hyunwoo Lee");  
+	Lcd_Printf(10*8,0,WHITE,GREEN,1,1,"Stop Watch. Designed by Hyunwoo Lee");  
 
 	Timer_Init();
 

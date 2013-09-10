@@ -3,3 +3,6 @@
 
 # ELF FILES
 *.elf.xMAP
+
+# SWP FILES
+*.swp
