@@ -1,6 +1,6 @@
 /*
  * =====================================================================
- * NAME         : Main.c
+ * NAME         : stop-watch.c
  *
  * Descriptions : Main routine for S3C2440
  *

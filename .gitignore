@@ -1,0 +1,5 @@
+# TDT FILES
+*.tdt
+
+# ELF FILES
+*.elf.xMAP
