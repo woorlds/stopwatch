@@ -8,7 +8,7 @@
 #define  TASK_STK_SIZE 		512    
 
 /* Number of identical tasks */             
-#define  NO_TASKS           10                  
+#define  NO_TASKS           1                  
 #define  MAZE_SIZE  		19
 
  /* Tasks stacks */

@@ -28,12 +28,12 @@ void Main()
 
 	Timer_Init();
 
-    OSInit();                               /* Initialize uC/OS-II */
-    //RandomSem = OSSemCreate(1);             /* Random number semaphore */
-    OSTaskCreate(TaskStart, (void *)0, (void *)&TaskStartStk[TASK_STK_SIZE - 1], 0);
+	OSInit();                               /* Initialize uC/OS-II */
+	//RandomSem = OSSemCreate(1);             /* Random number semaphore */
+	OSTaskCreate(TaskStart, (void *)0, (void *)&TaskStartStk[TASK_STK_SIZE - 1], 0);
 
-    OSStart();                              /* Start multitasking */
-	
+	OSStart();                              /* Start multitasking */
+
 	while(1);	
 }
 
@@ -61,11 +61,13 @@ void C_IRQHandler(void)
 
 void Task (void *data)
 {
-	int  hour=0, min=0 , sec=0 , mm=0;
-	
+	int  hour=0, min=0, sec=0, mm=0;
+
 	while(1)
 	{
-		Lcd_Printf(300, 30+20 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+		Lcd_Printf(80, 50 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+
+		OSTimeDly(1);
 
 		if( mm++ == 59 )
 		{
@@ -79,56 +81,54 @@ void Task (void *data)
 		{
 			hour++; min = 0 ;
 		}
-
 	}
 }
 
 
 void TaskStart (void *data)
 {
-        U8 i;
-        char key;
+	U8 i;
+	char key;
+	int idx=0;
 
-        data = data;                            /* Prevent compiler warning */
+	/* Prevent compiler warning */
+	data = data;
 
-		Timer_Start(OS_TICKS_PER_SEC);
-		
-        OSStatInit();                           /* Initialize uC/OS-II's statistics */
+	Timer_Start(OS_TICKS_PER_SEC);
 
-#if 0
-        for (i = 0; i < NO_TASKS; i++)
-        {                                       /* Create NO_TASKS identical tasks */
-                TaskData[i] = 1 + i;          /* Each task will display its own letter */
-                OSTaskCreate(Task, (void *)&TaskData[i], (void *)&TaskStk[i][TASK_STK_SIZE - 1], i + 1);
-                Lcd_Printf(300,30+20*i,BLACK,WHITE,1,1,"Task %d Shape: %c",i+1, i+1);
-        }
-#endif
+	/* Initialize uC/OS-II's statistics */
+	OSStatInit();
 
-    	OSTaskCreate(Task, (void *)0, (void *)&TaskStk[0][TASK_STK_SIZE - 1], 1);
+	for(idx=0; idx<NO_TASKS; idx++)
+	{
+		TaskData[idx] = 1 + idx;
+		OSTaskCreate(Task, (void *)&TaskData[idx], (void *)&TaskStk[idx][TASK_STK_SIZE - 1], idx+1);
+		Lcd_Printf(300,50+(20*idx),BLUE,GREEN,1,1,"Task %d",idx+1);
+	}
 
-        Uart_Printf("<-POWER OFF TO QUIT->\n");
+	Uart_Printf("<-POWER OFF TO QUIT->\n");
 
-		Lcd_Printf(5*8,16*16,BLUE,GREEN,1,1,"Task Count: ",OSTaskCtr);  
-		Lcd_Printf(25*8,16*16,BLUE,GREEN,1,1,"CPU Usage: ",OSCPUUsage);  
-		Lcd_Printf(40*8,16*16,BLUE,GREEN,1,1,"Context SW: ",OSCtxSwCtr);  
+	Lcd_Printf(5*8,16*16,BLUE,GREEN,1,1,"Task Count: ",OSTaskCtr);  
+	Lcd_Printf(25*8,16*16,BLUE,GREEN,1,1,"CPU Usage: ",OSCPUUsage);  
+	Lcd_Printf(40*8,16*16,BLUE,GREEN,1,1,"Context SW: ",OSCtxSwCtr);  
 
-        while(1)
-        {
- 				Lcd_Printf(16*8,16*16,BLUE,GREEN,1,1,"%-3d",OSTaskCtr);  
- 				Lcd_Printf(35*8,16*16,BLUE,GREEN,1,1,"%-3d",OSCPUUsage);  
- 				Lcd_Printf(51*8,16*16,BLUE,GREEN,1,1,"%-3d",OSCtxSwCtr);  
-							
-                OSCtxSwCtr = 0;
-                
-                if(Uart_Get_Pressed()==0x1b)
-                {
-					while(1)
-					{
-						if(Uart_Get_Pressed()==0x1b)	break;
-					}
-                }
+	while(1)
+	{
+		Lcd_Printf(16*8,16*16,BLUE,GREEN,1,1,"%-3d",OSTaskCtr);  
+		Lcd_Printf(35*8,16*16,BLUE,GREEN,1,1,"%-3d",OSCPUUsage);  
+		Lcd_Printf(51*8,16*16,BLUE,GREEN,1,1,"%-3d",OSCtxSwCtr);  
 
-                OSTimeDlyHMSM(0, 0, 1, 0);      /* Wait one second */
+		OSCtxSwCtr = 0;
 
-        }
+		if(Uart_Get_Pressed()==0x1b)
+		{
+			while(1)
+			{
+				if(Uart_Get_Pressed()==0x1b)
+					break;
+			}
+		}
+
+		OSTimeDlyHMSM(0, 0, 1, 0);      /* Wait one second */
+	}
 }
