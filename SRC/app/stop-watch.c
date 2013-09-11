@@ -59,7 +59,7 @@ void C_IRQHandler(void)
 }
 
 
-void Task (void *data)
+void Task1 (void *data)
 {
 	int  hour=0, min=0, sec=0, mm=0;
 
@@ -84,6 +84,80 @@ void Task (void *data)
 	}
 }
 
+void Task2(void *data)
+{
+	int  hour=0, min=0, sec=0, mm=0;
+
+	while(1)
+	{
+		Lcd_Printf(80, 70 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+
+		OSTimeDly(5);
+
+		if( mm++ == 59 )
+		{
+			sec++; mm = 0 ;
+		}
+		if( sec == 59 )
+		{
+			min++; sec = 0 ;
+		}
+		if( min == 59 )
+		{
+			hour++; min = 0 ;
+		}
+	}
+}
+
+void Task3 (void *data)
+{
+	int  hour=0, min=0, sec=0, mm=0;
+
+	while(1)
+	{
+		Lcd_Printf(80, 90 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+
+		OSTimeDly(10);
+
+		if( mm++ == 59 )
+		{
+			sec++; mm = 0 ;
+		}
+		if( sec == 59 )
+		{
+			min++; sec = 0 ;
+		}
+		if( min == 59 )
+		{
+			hour++; min = 0 ;
+		}
+	}
+}
+
+void Task4 (void *data)
+{
+	int  hour=0, min=0, sec=0, mm=0;
+
+	while(1)
+	{
+		Lcd_Printf(80, 110 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+
+		OSTimeDly(1);
+
+		if( mm++ == 59 )
+		{
+			sec++; mm = 0 ;
+		}
+		if( sec == 59 )
+		{
+			min++; sec = 0 ;
+		}
+		if( min == 59 )
+		{
+			hour++; min = 0 ;
+		}
+	}
+}
 
 void TaskStart (void *data)
 {
@@ -102,9 +176,14 @@ void TaskStart (void *data)
 	for(idx=0; idx<NO_TASKS; idx++)
 	{
 		TaskData[idx] = 1 + idx;
-		OSTaskCreate(Task, (void *)&TaskData[idx], (void *)&TaskStk[idx][TASK_STK_SIZE - 1], idx+1);
-		Lcd_Printf(300,50+(20*idx),BLUE,GREEN,1,1,"Task %d",idx+1);
+		//OSTaskCreate(Task, (void *)&TaskData[idx], (void *)&TaskStk[idx][TASK_STK_SIZE - 1], idx+1);
+		Lcd_Printf(308,50+(20*idx),BLUE,GREEN,1,1,"Task %d",idx+1);
 	}
+
+	OSTaskCreate(Task1, (void *)0, (void *)&TaskStk[0][TASK_STK_SIZE - 1], 1);
+	OSTaskCreate(Task2, (void *)0, (void *)&TaskStk[1][TASK_STK_SIZE - 1], 2);
+	OSTaskCreate(Task3, (void *)0, (void *)&TaskStk[2][TASK_STK_SIZE - 1], 3);
+	//OSTaskCreate(Task4, (void *)0, (void *)&TaskStk[3][TASK_STK_SIZE - 1], 4);
 
 	Uart_Printf("<-POWER OFF TO QUIT->\n");
 

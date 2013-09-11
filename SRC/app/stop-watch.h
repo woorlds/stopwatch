@@ -8,7 +8,7 @@
 #define  TASK_STK_SIZE 		512    
 
 /* Number of identical tasks */             
-#define  NO_TASKS           1                  
+#define  NO_TASKS           3                  
 #define  MAZE_SIZE  		19
 
  /* Tasks stacks */
@@ -21,7 +21,10 @@ char     TaskData[NO_TASKS];
 void Timer0_ISR(void);
 void Inval_ISR(void);
 void C_IRQHandler(void);
-void Task (void *data);
+void Task1 (void *data);
+void Task2 (void *data);
+void Task3 (void *data);
+void Task4 (void *data);
 void TaskStart (void *data);
 
 void (*irqtbl[32])(void)={
