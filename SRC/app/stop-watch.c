@@ -74,7 +74,7 @@ void Task1 (void *data)
 
 #if HIGH_QUALITY
 		OSTimeDlyHMSM(0,0,0,20);
-		if( mm++ == 59 )
+		if( mm++ == 60 )
 		{
 			sec++; mm = 0 ;
 		}
@@ -82,11 +82,11 @@ void Task1 (void *data)
 		OSTimeDlyHMSM(0,0,1,0);
 		sec++;
 #endif
-		if( sec == 59 )
+		if( sec == 60 )
 		{
 			min++; sec = 0 ;
 		}
-		if( min == 59 )
+		if( min == 60 )
 		{
 			hour++; min = 0 ;
 		}
@@ -107,7 +107,7 @@ void Task2(void *data)
 
 #if HIGH_QUALITY
 		OSTimeDlyHMSM(0,0,0,30);
-		if( mm++ == 59 )
+		if( mm++ == 60 )
 		{
 			sec++; mm = 0 ;
 		}
@@ -115,11 +115,11 @@ void Task2(void *data)
 		OSTimeDlyHMSM(0,0,2,0);
 		sec++;
 #endif
-		if( sec == 59 )
+		if( sec == 60 )
 		{
 			min++; sec = 0 ;
 		}
-		if( min == 59 )
+		if( min == 60 )
 		{
 			hour++; min = 0 ;
 		}
@@ -140,7 +140,7 @@ void Task3 (void *data)
 
 #if HIGH_QUALITY
 		OSTimeDlyHMSM(0,0,0,40);
-		if( mm++ == 59 )
+		if( mm++ == 60 )
 		{
 			sec++; mm = 0 ;
 		}
@@ -148,11 +148,11 @@ void Task3 (void *data)
 		OSTimeDlyHMSM(0,0,3,0);
 		sec++;
 #endif
-		if( sec == 59 )
+		if( sec == 60 )
 		{
 			min++; sec = 0 ;
 		}
-		if( min == 59 )
+		if( min == 60 )
 		{
 			hour++; min = 0 ;
 		}
@@ -173,7 +173,7 @@ void Task4 (void *data)
 
 #if HIGH_QUALITY
 		OSTimeDlyHMSM(0,0,0,50);
-		if( mm++ == 59 )
+		if( mm++ == 60 )
 		{
 			sec++; mm = 0 ;
 		}
@@ -181,11 +181,11 @@ void Task4 (void *data)
 		OSTimeDlyHMSM(0,0,4,0);
 		sec++;
 #endif
-		if( sec == 59 )
+		if( sec == 60 )
 		{
 			min++; sec = 0 ;
 		}
-		if( min == 59 )
+		if( min == 60 )
 		{
 			hour++; min = 0 ;
 		}
