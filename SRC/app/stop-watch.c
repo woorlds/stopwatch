@@ -65,14 +65,23 @@ void Task1 (void *data)
 
 	while(1)
 	{
+#if HIGH_QUALITY
 		Lcd_Printf(80, 50 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+#else
+		Lcd_Printf(80, 50 ,BLUE,GREEN,1,1,"%02d:%02d:%02d",hour, min, sec);
+#endif
 
-		OSTimeDly(1);
 
+#if HIGH_QUALITY
+		OSTimeDlyHMSM(0,0,0,20);
 		if( mm++ == 59 )
 		{
 			sec++; mm = 0 ;
 		}
+#else
+		OSTimeDlyHMSM(0,0,1,0);
+		sec++;
+#endif
 		if( sec == 59 )
 		{
 			min++; sec = 0 ;
@@ -90,14 +99,22 @@ void Task2(void *data)
 
 	while(1)
 	{
+#if HIGH_QUALITY
 		Lcd_Printf(80, 70 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+#else
+		Lcd_Printf(80, 70 ,BLUE,GREEN,1,1,"%02d:%02d:%02d",hour, min, sec);
+#endif
 
-		OSTimeDly(5);
-
+#if HIGH_QUALITY
+		OSTimeDlyHMSM(0,0,0,30);
 		if( mm++ == 59 )
 		{
 			sec++; mm = 0 ;
 		}
+#else
+		OSTimeDlyHMSM(0,0,2,0);
+		sec++;
+#endif
 		if( sec == 59 )
 		{
 			min++; sec = 0 ;
@@ -115,14 +132,22 @@ void Task3 (void *data)
 
 	while(1)
 	{
+#if HIGH_QUALITY
 		Lcd_Printf(80, 90 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+#else
+		Lcd_Printf(80, 90 ,BLUE,GREEN,1,1,"%02d:%02d:%02d",hour, min, sec);
+#endif
 
-		OSTimeDly(10);
-
+#if HIGH_QUALITY
+		OSTimeDlyHMSM(0,0,0,40);
 		if( mm++ == 59 )
 		{
 			sec++; mm = 0 ;
 		}
+#else
+		OSTimeDlyHMSM(0,0,3,0);
+		sec++;
+#endif
 		if( sec == 59 )
 		{
 			min++; sec = 0 ;
@@ -140,14 +165,22 @@ void Task4 (void *data)
 
 	while(1)
 	{
+#if HIGH_QUALITY
 		Lcd_Printf(80, 110 ,BLUE,GREEN,1,1,"%02d:%02d:%02d:%02d",hour, min, sec, mm);
+#else
+		Lcd_Printf(80, 110 ,BLUE,GREEN,1,1,"%02d:%02d:%02d",hour, min, sec);
+#endif
 
-		OSTimeDly(0);
-
+#if HIGH_QUALITY
+		OSTimeDlyHMSM(0,0,0,50);
 		if( mm++ == 59 )
 		{
 			sec++; mm = 0 ;
 		}
+#else
+		OSTimeDlyHMSM(0,0,4,0);
+		sec++;
+#endif
 		if( sec == 59 )
 		{
 			min++; sec = 0 ;

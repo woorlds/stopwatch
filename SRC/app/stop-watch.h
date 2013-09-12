@@ -11,6 +11,9 @@
 #define  NO_TASKS           4                  
 #define  MAZE_SIZE  		19
 
+// If you HIGH_QUALITY 1, CPU usage is 40 or over
+#define HIGH_QUALITY		1
+
  /* Tasks stacks */
 OS_STK   TaskStk[NO_TASKS][TASK_STK_SIZE];     
 OS_STK   TaskStartStk[TASK_STK_SIZE];
